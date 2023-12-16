@@ -13,27 +13,27 @@ void solve() {
   cin >> n;
   
   map<string, int> m;
- 	string s, ss = "0", sd;
- 	int mx = INT_MIN, in;
- 	while(n--) {
- 		cin >> s;
- 		if (m.find(s) == m.end()) {
- 			m[s] = 1;
- 			sd = s;
- 		} else {
- 			m[s]++;
- 			in = mx; 			
- 			mx = max(mx, m[s]);
- 			if (mx != in) {
- 				ss = s;
- 			}
- 		}
-	}
-	if (ss != "0") {
-		cout << ss << '\n';
-	} else {
-		cout << sd << '\n';
-	}
+  string s, ss = "0", sd;
+  int mx = INT_MIN, in;
+  while(n--) {
+    cin >> s;
+    if (m.find(s) == m.end()) {
+ 	m[s] = 1;
+ 	sd = s;
+    } else {
+ 	m[s]++;
+ 	in = mx; 			
+ 	mx = max(mx, m[s]);
+ 	if (mx != in) {
+ 	  ss = s;
+ 	}
+      }
+   }
+   if (ss != "0") {
+      cout << ss << '\n';
+   } else {
+      cout << sd << '\n';
+   }
 }
 
 int main() {
