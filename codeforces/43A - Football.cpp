@@ -34,7 +34,6 @@ void solve() {
 	} else {
 		cout << sd << '\n';
 	}
-	
 }
 
 int main() {
