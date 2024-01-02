@@ -10,42 +10,41 @@ typedef long double ld;
 const int N = 2e5+5;
 const ll inf = 1e9;
 
-map<ll, int> used;
-vector<ll> a, b;
-int n;
-
-void dfs(ll x) {
-  b.pb(x);
-  used[x] = 1;
-  for (int i = 0; i < n; i++) {
-    if (!used[a[i]]) {
-      if (a[i] == x * 2 || (x % 3 == 0 && a[i] == x / 3)) {
-        dfs(a[i]);
-      }
-    }
-  }
-}
-
 void solve() {
-  cin >> n;
-  a.resize(n);
+  int n, k, s = 0, tmp, num_tmp;
+  map<int, int> m;
+  cin >> n >> k;
+  
   for (int i = 0; i < n; i++) {
-    cin >> a[i];
+    int e; cin >> e;
+    m[e]++;
   }
 
-  for (int i = 0; i < n; i++) {
-    used.clear();
-    b.clear();
-    dfs(a[i]);
-    if (b.size() == n) {
-      for (int i = 0; i < n; i++) {
-        cout << b[i] << ' ';
-      }
-      cout << endl;
-      return;
+  if (k == 0) {
+    for (auto i : m) {
+      if (i.first > 1) {
+        cout << 1 << endl;
+        return;
+      } else {
+        cout << -1 << endl;
+        return;
+      } 
     }
-  } 
+  }
 
+  for (auto i : m) {
+    if (s + i.second >= k) {
+      tmp = i.second;
+      num_tmp = i.first;
+      break;
+    }
+    else s += i.second;
+  }
+  if (s + tmp > k) {
+    cout << -1 << endl;
+  } else {
+    cout << num_tmp << endl;
+  }
 }
 
 int main() {
