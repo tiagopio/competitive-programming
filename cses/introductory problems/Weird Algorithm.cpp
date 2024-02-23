@@ -1,3 +1,12 @@
+/*
+ Task:	Weird Algorithm
+ Sender:	tiagopio
+ Submission time:	2024-02-23 14:15:18 +0200
+ Language:	C++20
+ Status:	READY
+ Result:	ACCEPTED
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
  
