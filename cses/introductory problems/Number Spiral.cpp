@@ -5,6 +5,11 @@
   Language:	C++20
   Status:	READY
   Result:	ACCEPTED
+  
+  Test results
+  test	verdict	time	
+  #1	ACCEPTED	0.17 s
+  #2	ACCEPTED	0.17 s
 */
 
 #include <bits/stdc++.h>
