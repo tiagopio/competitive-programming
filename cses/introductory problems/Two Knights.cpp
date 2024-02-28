@@ -5,13 +5,8 @@
   Language:	C++20
   Status:	READY
   Result:	ACCEPTED
-  
-  Test results
-  test	verdict	time	
-  #1	ACCEPTED	0.02 s
-  #2	ACCEPTED	0.00 s
-  #3	ACCEPTED	0.00 s
 */
+
 #include <bits/stdc++.h>
 using namespace std;
  
