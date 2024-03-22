@@ -111,7 +111,7 @@ cout << "The maximum among {" << a << ", " << b << ", " << c << "} is: " << max_
 int min_value = min({a, b, c});
 cout << "The minimum among {" << a << ", " << b << ", " << c << "} is: " << min_value << endl;
 ```
-
+---------
 ## Common data structures:
 ### vector<>
 it's a vector, can hold any type within the <>, example of usage
