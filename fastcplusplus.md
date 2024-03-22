@@ -2,9 +2,9 @@
 
 ## First of all
 ```c++
-  int n = 5;
-  printf("%d\n", n) = cout << n << endl;
-  scanf("%d", &n) = cin >> n;
+int n = 5;
+printf("%d\n", n) = cout << n << endl;
+scanf("%d", &n) = cin >> n;
 ```
 ---------
 ## Default template:
