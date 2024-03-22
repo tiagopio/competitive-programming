@@ -14,9 +14,9 @@
 using namespace std; // saves from having to write "std::" before each standard library function
   
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	// speeds up the code for large inputs
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  // speeds up the code for large inputs
 }
 ```
 ---------
