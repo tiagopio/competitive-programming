@@ -1,2 +1,0 @@
-set ts=2 sw=2 si ai nu mouse=a
-syntax on
