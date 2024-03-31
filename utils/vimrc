@@ -1,2 +1,8 @@
-set ts=2 sw=2 si ai nu mouse=a
+set ts=2 sw=2 sts=2 si ai nu mouse=a
 syntax on
+
+inoremap <c-n> <Esc>:Lex<cr>:vertical resize 30<cr>
+nnoremap <c-n> <Esc>:Lex<cr>:vertical resize 30<cr>
+
+inoremap <tab> <C-o>:bn<cr>
+nnoremap <tab> :bn<cr>
