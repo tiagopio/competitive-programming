@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#ifdef LOCAL
+#include "algo/debug.h"
+#else
+#define debug(...) 
+#endif
+
 #define int long long
 
 void solve() {
@@ -8,8 +14,8 @@ void solve() {
 }
 
 int32_t main() {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
 
   int t = 1;
   // cin >> t;
