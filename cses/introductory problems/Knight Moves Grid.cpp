@@ -1,3 +1,9 @@
+// Task:	Knight Moves Grid
+// Sender:	tiagopio
+// Submission time:	2025-05-19 19:47:45 +0300
+// Language:	C++ (C++20)
+// Status:	READY
+// Result:	ACCEPTED
 #include<bits/stdc++.h>
 using namespace std;
 
