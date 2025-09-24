@@ -1,57 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define int long long
+
+void setIO(string s) {
+	freopen((s + ".in").c_str(), "r", stdin);
+	freopen((s + ".out").c_str(), "w", stdout);
+}
+
 void solve() {
-  freopen("mixmilk.in", "r", stdin);
-  freopen("mixmilk.out", "w", stdout);
-  
-  vector<pair<long long, long long>> bucket(3);
-  for (long long i = 0; i < 3; i++) {
-    cin >> bucket[i].first >> bucket[i].second;
-  }
-
-  for (long long i = 0; i < 100; i++) {
-    if (i % 3 == 0) {
-      if (bucket[0].second + bucket[1].second <= bucket[1].first) {
-        bucket[1].second += bucket[0].second;
-        bucket[0].second = 0;
-      } else {
-        bucket[0].second -= bucket[1].first - bucket[1].second;
-        bucket[1].second = bucket[1].first;
-      }
+    setIO("mixmilk");
+    // capacity, current
+    vector<pair<int, int>> p(4);
+    for (int i = 1; i <= 3; i++) cin >> p[i].first >> p[i].second;
+    for (int i = 1; i <= 100; i++) {
+        int r = i % 3;
+        if (r == 0) {
+            int can = p[1].first - p[1].second;
+            int put = min(p[3].second, can);
+            p[3].second -= put;
+            p[1].second += put;
+        } else if (r == 1) {
+            int can = p[2].first - p[2].second;
+            int put = min(p[1].second, can);
+            p[1].second -= put;
+            p[2].second += put;
+        }  else {
+            int can = p[3].first - p[3].second;
+            int put = min(p[2].second, can);
+            p[2].second -= put;
+            p[3].second += put;
+        }
     }
-    if (i % 3 == 1) {
-      if (bucket[1].second + bucket[2].second <= bucket[2].first) {
-        bucket[2].second += bucket[1].second;
-        bucket[1].second = 0;
-      } else {
-        bucket[1].second -= bucket[2].first - bucket[2].second;
-        bucket[2].second = bucket[2].first;
-      }
-    }
-    if (i % 3 == 2) {
-      if (bucket[0].second + bucket[2].second <= bucket[0].first) {
-        bucket[0].second += bucket[2].second;
-        bucket[2].second = 0;
-      } else {
-        bucket[2].second -= bucket[0].first - bucket[0].second;
-        bucket[0].second = bucket[0].first;
-      }
-    }
-  }
-  for (long long i = 0; i < 3; i++) {
-    cout << bucket[i].second << '\n';
-  }
-} 
+    for (int i = 1; i <= 3; i++) cout << p[i].second << '\n';
+}
 
-int main() {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+int32_t main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-  int t = 1;
-  // cin >> t;
-  while(t--) {
-    solve();
-  }
-  return 0;
+    int t = 1;
+    // cin >> t;
+    while(t--) {
+        solve();
+    }
+    return 0;
 }
