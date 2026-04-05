@@ -69,8 +69,8 @@ int32_t main() {
     Let C be a connect component. The minimum rectangle perimeter
     is given by 2 * (max(Cx) - min(Cx)) + 2 * (max(Cy) - min(Cy))
 
-    where max/min(Ci) | i in {x, y} returns the maximum x cordinate and 
-    the minimum cordinate
+    where max/min(Ci) | i in {x, y} returns the maximum i cordinate and 
+    the minimum i cordinate
 
     Complixty: O(n + m)
 
