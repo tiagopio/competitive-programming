@@ -71,6 +71,6 @@ int32_t main() {
 
     Since the limits are small we can just simulate the process
 
-    O(n * (n + m))
+    O(n^2 + (n + m))
 
 }}} */
