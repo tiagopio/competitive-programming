@@ -262,13 +262,10 @@ struct bint {
 };
 
 void solve() {
-    bint num = 1;
-    for (int i = 0; i < 1000; i++) num *= 2;
+    bint fat = 1;
+    for (int i = 1; i <= 100; i++) fat *= i;
     int ans = 0;
-    while(num > 0) {
-        ans += num % 10;
-        num /= 10;
-    }
+    while(fat > 0) ans += fat % 10, fat /= 10;
     cout << ans << '\n';
 }
 
