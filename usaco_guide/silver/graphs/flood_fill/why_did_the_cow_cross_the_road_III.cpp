@@ -17,17 +17,17 @@ bool used[MAX][MAX];
 vector<int> comps(MAX * MAX, 0);
 
 bool check(int i, int j, int li, int lj) {
-    return i >= 0 and i < n and j >= 0 and j < n and !used[i][j] and !block[li][lj].count({i, j});
+    return i >= 0 and i < n and j >= 0 and j < n and !used[i][j] and (!block[i][j].count({li, lj}) and !block[li][lj].count({i, j}));
 }
 
 void floodfill(int i, int j, int li, int lj, int c) {
     if (!check(i, j, li, lj)) return;
-    used[i][j] = true;
     comps[c] += grid[i][j];
+    used[i][j] = true;
     floodfill(i + 1, j, i, j, c);
     floodfill(i - 1, j, i, j, c);
-    floodfill(i + 1, j, i, j, c);
-    floodfill(i + 1, j, i, j, c);
+    floodfill(i, j + 1, i, j, c);
+    floodfill(i, j - 1, i, j, c);
 }
 
 void solve() {
@@ -53,13 +53,21 @@ void solve() {
             }
         }
     }
+    int sum = 0;
+    for (int i = 0; i < comp; i++) sum += comps[i];
+    int ans = 0;
+    for (int i = 0; i < comp; i++) {
+        sum -= comps[i];
+        ans += comps[i] * sum;
+    }
+    cout << ans << '\n';
 }
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    // setIO("countcross");
+    setIO("countcross");
 
     int t = 1;
     // cin >> t;
