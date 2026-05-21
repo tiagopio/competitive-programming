@@ -20,3 +20,7 @@ int32_t main() {
     } 
     return 0;
 }
+
+/* Solution Notes {{{
+    toupper(s[0])
+ }}} */
